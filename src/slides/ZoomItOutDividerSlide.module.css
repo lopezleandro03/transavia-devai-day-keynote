@@ -1,0 +1,76 @@
+.slide {
+  background: var(--background);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.orb1 {
+  width: 520px;
+  height: 520px;
+  top: -140px;
+  right: -80px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--accent) 72%, white),
+    color-mix(in srgb, var(--cyan) 16%, transparent) 52%,
+    transparent 72%
+  );
+  opacity: 0.22;
+}
+
+.orb2 {
+  width: 360px;
+  height: 360px;
+  bottom: -100px;
+  left: 20px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--purple) 58%, white),
+    color-mix(in srgb, var(--purple-deep) 12%, transparent) 60%,
+    transparent 76%
+  );
+  opacity: 0.14;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 820;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--foreground);
+  font-size: clamp(56px, 7.5vw, 104px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.rule {
+  width: 96px;
+  height: 4px;
+  margin: 10px 0 6px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}

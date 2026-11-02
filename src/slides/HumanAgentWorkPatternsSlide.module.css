@@ -1,0 +1,512 @@
+.slide {
+  background: var(--background);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.orb1 {
+  width: 420px;
+  height: 420px;
+  top: -150px;
+  right: -80px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--accent) 64%, var(--card)),
+    color-mix(in srgb, var(--cyan) 16%, transparent) 54%,
+    transparent 74%
+  );
+  opacity: 0.24;
+}
+
+.orb2 {
+  width: 340px;
+  height: 340px;
+  bottom: -130px;
+  left: -60px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--purple) 54%, var(--card)),
+    color-mix(in srgb, var(--purple-deep) 14%, transparent) 60%,
+    transparent 76%
+  );
+  opacity: 0.18;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  min-height: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.headingRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  align-items: end;
+  gap: 48px;
+}
+
+.title {
+  margin: 0;
+  color: var(--foreground);
+  font-size: clamp(32px, 3.4vw, 46px);
+  font-weight: 820;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.subtitle {
+  max-width: 470px;
+  margin: 0 0 3px;
+  color: var(--muted-foreground);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.assist {
+  --stage-color: var(--muted-foreground);
+}
+
+.draft {
+  --stage-color: var(--cyan);
+}
+
+.delegate {
+  --stage-color: var(--purple);
+}
+
+.orchestrate {
+  --stage-color: var(--accent);
+}
+
+.timelineBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timelineTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.timelineLabel {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 820;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.interactionHint {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.timelineShell {
+  position: relative;
+  cursor: pointer;
+}
+
+.track {
+  position: absolute;
+  z-index: 0;
+  top: 14px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.progress {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--muted-foreground), var(--cyan), var(--purple), var(--accent));
+  transition: width 320ms ease;
+}
+
+.timeline {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+}
+
+.generationButton {
+  display: flex;
+  min-width: 0;
+  padding: 0 10px 4px;
+  appearance: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  background: transparent;
+  color: var(--muted-foreground);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.1;
+  transform: translateY(5px);
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+
+.generationButton.reached {
+  opacity: 1;
+  transform: none;
+}
+
+.generationButton:focus-visible {
+  outline: 2px solid var(--stage-color);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+.markerWrap {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+}
+
+.marker {
+  width: 13px;
+  height: 13px;
+  border: 3px solid var(--card);
+  border-radius: 999px;
+  background: var(--border);
+  box-shadow: 0 0 0 2px var(--border);
+  transition: width 220ms ease, height 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+.reached .marker {
+  background: var(--stage-color);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--stage-color) 70%, var(--border));
+}
+
+.active .marker {
+  width: 21px;
+  height: 21px;
+  box-shadow:
+    0 0 0 2px var(--stage-color),
+    0 0 0 7px color-mix(in srgb, var(--stage-color) 13%, transparent);
+}
+
+.buttonCopy {
+  display: flex;
+  min-width: 142px;
+  padding: 7px 12px 8px;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: background 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.generationButton:hover .buttonCopy {
+  background: color-mix(in srgb, var(--stage-color) 5%, var(--card));
+}
+
+.active .buttonCopy {
+  border-color: color-mix(in srgb, var(--stage-color) 35%, var(--border));
+  background: color-mix(in srgb, var(--stage-color) 9%, var(--card));
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--stage-color) 10%, transparent);
+  transform: translateY(2px);
+}
+
+.stageMeta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.generation {
+  color: var(--muted-foreground);
+  font-size: 9px;
+  font-weight: 820;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.badge {
+  padding: 2px 6px;
+  border-radius: 999px;
+  color: var(--background);
+  background: var(--stage-color);
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.patternName {
+  color: var(--foreground);
+  font-size: 15px;
+  font-weight: 780;
+  line-height: 1.1;
+}
+
+.stagePanel {
+  position: relative;
+  min-height: 224px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--stage-color) 28%, var(--border));
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      120deg,
+      color-mix(in srgb, var(--stage-color) 9%, var(--card)),
+      color-mix(in srgb, var(--card) 96%, transparent) 48%
+    );
+  box-shadow: var(--shadow-elevated);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.stagePanelPending {
+  opacity: 0.1;
+  transform: translateY(7px);
+}
+
+.stagePanelVisible {
+  opacity: 1;
+  transform: none;
+}
+
+.stagePanel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--stage-color), color-mix(in srgb, var(--stage-color) 18%, transparent));
+}
+
+.stagePanelInner {
+  display: grid;
+  min-height: 224px;
+  padding: 24px 26px 22px;
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.8fr);
+  grid-template-rows: 1fr auto;
+  gap: 17px 26px;
+  animation: stageIn 280ms ease both;
+}
+
+@keyframes stageIn {
+  from {
+    opacity: 0.25;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.stageOverview {
+  display: flex;
+  padding-right: 25px;
+  grid-row: 1 / 3;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  border-right: 1px solid color-mix(in srgb, var(--stage-color) 22%, var(--border));
+}
+
+.iconPlate {
+  display: grid;
+  width: 132px;
+  height: 78px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--stage-color) 30%, var(--border));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--stage-color) 8%, var(--card));
+}
+
+.iconPlate .patternIcon {
+  width: 108px;
+  height: 64px;
+}
+
+.patternIcon {
+  width: 76px;
+  height: 46px;
+  flex: 0 0 76px;
+  overflow: visible;
+}
+
+.link {
+  stroke: color-mix(in srgb, var(--stage-color) 45%, var(--border));
+  stroke-width: 1.5;
+}
+
+.agentNode {
+  fill: var(--card);
+  stroke: color-mix(in srgb, var(--foreground) 70%, var(--border));
+  stroke-width: 1.5;
+}
+
+.humanNode {
+  fill: var(--stage-color);
+  stroke: color-mix(in srgb, var(--foreground) 70%, var(--stage-color));
+  stroke-width: 1.5;
+}
+
+.humanHalo {
+  fill: color-mix(in srgb, var(--stage-color) 14%, transparent);
+  stroke: var(--stage-color);
+  stroke-width: 1.5;
+}
+
+.teamNode {
+  fill: var(--stage-color);
+  stroke: var(--card);
+  stroke-width: 1;
+}
+
+.stageStory {
+  max-width: 280px;
+  margin: 0;
+  color: var(--foreground);
+  font-size: 21px;
+  font-weight: 760;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+}
+
+.responsibilityGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.responsibilityCard {
+  display: flex;
+  min-width: 0;
+  padding: 15px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--card) 86%, transparent);
+}
+
+.cardIcon {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border-radius: 9px;
+  color: var(--stage-color);
+  background: color-mix(in srgb, var(--stage-color) 12%, var(--card));
+  font-size: 10px;
+  font-weight: 880;
+  letter-spacing: -0.02em;
+}
+
+.cardLabel {
+  color: var(--muted-foreground);
+  font-size: 9px;
+  font-weight: 820;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cardValue {
+  margin: 0;
+  color: var(--foreground);
+  font-size: 16px;
+  font-weight: 680;
+  line-height: 1.25;
+}
+
+.takeaway {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 9px;
+  padding: 7px 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 9%, var(--card));
+  transition: opacity 300ms ease, transform 300ms ease, box-shadow 300ms ease;
+}
+
+.takeawayPending {
+  opacity: 0.14;
+  transform: translateY(5px);
+}
+
+.takeawayRevealed {
+  opacity: 1;
+  transform: none;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.takeawayArrow {
+  display: grid;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--background);
+  background: var(--accent);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.takeawayText {
+  margin: 0;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 720;
+}
+
+@media (max-width: 1000px) {
+  .headingRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .stagePanelInner {
+    grid-template-columns: minmax(205px, 0.65fr) minmax(0, 1.8fr);
+    gap: 14px 20px;
+  }
+
+  .stageOverview {
+    padding-right: 20px;
+  }
+
+  .buttonCopy {
+    min-width: 118px;
+  }
+}

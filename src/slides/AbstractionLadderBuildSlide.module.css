@@ -1,0 +1,243 @@
+.slide {
+  background: var(--background);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.orb1 {
+  width: 480px;
+  height: 480px;
+  top: -170px;
+  right: -80px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--purple) 50%, var(--card)),
+    color-mix(in srgb, var(--cyan) 12%, transparent) 55%,
+    transparent 72%
+  );
+  opacity: 0.18;
+}
+
+.orb2 {
+  width: 350px;
+  height: 350px;
+  bottom: -110px;
+  left: -55px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--accent) 45%, var(--card)),
+    color-mix(in srgb, var(--accent) 9%, transparent) 60%,
+    transparent 76%
+  );
+  opacity: 0.16;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) 140px;
+  align-items: stretch;
+  gap: 34px;
+  padding-top: 40px;
+  padding-bottom: 34px;
+}
+
+.ladder {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tierItem {
+  min-width: 0;
+}
+
+.tierGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.tier {
+  --tier-color: var(--muted-foreground);
+  display: grid;
+  min-height: 116px;
+  padding: 18px 24px;
+  grid-template-columns: minmax(170px, 0.8fr) minmax(220px, 1fr) minmax(240px, 1.12fr);
+  align-items: center;
+  gap: 24px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--tier-color);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  box-shadow: var(--shadow-elevated);
+  transition: opacity 360ms ease, transform 360ms ease, filter 360ms ease;
+}
+
+.top {
+  --tier-color: var(--accent);
+}
+
+.middle {
+  --tier-color: var(--purple);
+}
+
+.base {
+  --tier-color: var(--muted-foreground);
+}
+
+.hidden {
+  opacity: 0.1;
+  transform: translateY(10px);
+  filter: saturate(0.25);
+}
+
+.visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.role {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.roleName {
+  color: var(--tier-color);
+  font-size: 17px;
+  font-weight: 820;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.roleEra {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+}
+
+.abstraction {
+  min-width: 0;
+  margin: 0;
+  padding-left: 22px;
+  border-left: 1px solid var(--border);
+  color: var(--foreground);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.35;
+  white-space: pre-line;
+}
+
+.example {
+  display: flex;
+  min-width: 0;
+  padding-left: 22px;
+  flex-direction: column;
+  gap: 5px;
+  border-left: 1px solid var(--border);
+}
+
+.exampleLabel {
+  color: var(--purple);
+  font-size: 9px;
+  font-weight: 820;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.exampleCode {
+  min-width: 0;
+  color: var(--tier-color);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.bridge {
+  display: flex;
+  height: 42px;
+  padding: 0 74px;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 360ms ease, transform 360ms ease, filter 360ms ease;
+}
+
+.bridgeLine {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--purple) 55%, var(--border)));
+}
+
+.bridgeLine:last-child {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--purple) 55%, var(--border)), transparent);
+}
+
+.bridgePill {
+  padding: 5px 18px;
+  flex-shrink: 0;
+  border: 1px solid color-mix(in srgb, var(--purple) 50%, var(--border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--purple) 9%, var(--card));
+  color: var(--purple);
+  font-size: 11px;
+  font-weight: 820;
+  letter-spacing: 0.07em;
+}
+
+.arrow {
+  display: flex;
+  min-height: 0;
+  padding: 10px 0 4px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrowHead {
+  color: var(--accent);
+  font-size: 40px;
+  font-weight: 850;
+  line-height: 0.9;
+}
+
+.arrowLine {
+  width: 4px;
+  min-height: 76px;
+  flex: 1;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, var(--accent), color-mix(in srgb, var(--accent) 24%, var(--border)));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.arrowLabel {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: pre-line;
+}
+
+@media (max-width: 1000px) {
+  .body {
+    grid-template-columns: minmax(0, 1fr) 110px;
+    gap: 22px;
+  }
+
+  .tier {
+    grid-template-columns: minmax(145px, 0.8fr) minmax(180px, 1fr) minmax(190px, 1.05fr);
+    gap: 18px;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}

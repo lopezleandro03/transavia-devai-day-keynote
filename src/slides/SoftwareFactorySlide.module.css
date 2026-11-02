@@ -1,0 +1,180 @@
+.slide {
+  background: var(--background);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.orb1 {
+  width: 420px;
+  height: 420px;
+  top: -150px;
+  right: -80px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--purple) 58%, white),
+    color-mix(in srgb, var(--purple-deep) 12%, transparent) 55%,
+    transparent 74%
+  );
+  opacity: 0.12;
+}
+
+.orb2 {
+  width: 320px;
+  height: 320px;
+  bottom: -120px;
+  left: 80px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--accent) 54%, white),
+    color-mix(in srgb, var(--cyan) 12%, transparent) 60%,
+    transparent 76%
+  );
+  opacity: 0.12;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  min-height: 0;
+  grid-template-columns: minmax(0, 0.92fr) minmax(440px, 1.08fr);
+  align-items: center;
+  gap: 74px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 820;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.shiftFrom,
+.shiftTo {
+  margin: 0;
+  font-size: clamp(36px, 4vw, 56px);
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+}
+
+.shiftFrom {
+  max-width: 580px;
+  color: var(--foreground);
+  font-weight: 760;
+}
+
+.shiftTo {
+  max-width: 620px;
+  margin-top: 24px;
+  background: linear-gradient(135deg, var(--accent), var(--green));
+  background-clip: text;
+  color: var(--accent);
+  font-weight: 860;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.factoryVisual {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  justify-self: end;
+}
+
+.mosaic {
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: var(--shadow-elevated);
+}
+
+.tile {
+  display: grid;
+  min-width: 0;
+  place-items: center;
+  color: var(--foreground);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.purple {
+  background: color-mix(in srgb, var(--purple) 76%, var(--card));
+}
+
+.orange {
+  background: color-mix(in srgb, var(--pink) 52%, var(--card));
+}
+
+.green {
+  background: color-mix(in srgb, var(--green) 62%, var(--card));
+}
+
+.mint {
+  background: color-mix(in srgb, var(--accent) 46%, var(--card));
+}
+
+.deep {
+  background: color-mix(in srgb, var(--green) 78%, var(--foreground));
+}
+
+.dark {
+  background: color-mix(in srgb, var(--foreground) 88%, var(--green));
+}
+
+.gold {
+  background: color-mix(in srgb, var(--accent) 28%, var(--pink));
+}
+
+.symbol {
+  background: color-mix(in srgb, var(--card) 92%, var(--secondary));
+}
+
+.blank {
+  background: var(--card);
+}
+
+.factoryLabel {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  display: flex;
+  padding: 10px 14px;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  box-shadow: var(--shadow-elevated);
+  color: var(--foreground);
+  font-size: 12px;
+  font-weight: 820;
+}
+
+.factoryLabel > span:last-child {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+@media (max-width: 1050px) {
+  .body {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+    gap: 42px;
+  }
+
+  .shiftFrom,
+  .shiftTo {
+    font-size: 40px;
+  }
+}

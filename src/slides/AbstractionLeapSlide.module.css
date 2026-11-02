@@ -1,0 +1,94 @@
+.slide {
+  background: var(--background);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.orb1 {
+  width: 560px;
+  height: 560px;
+  top: -190px;
+  right: -100px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--purple) 56%, var(--card)),
+    color-mix(in srgb, var(--cyan) 13%, transparent) 55%,
+    transparent 73%
+  );
+  opacity: 0.22;
+}
+
+.orb2 {
+  width: 390px;
+  height: 390px;
+  bottom: -120px;
+  left: -70px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--accent) 48%, var(--card)),
+    color-mix(in srgb, var(--accent) 10%, transparent) 58%,
+    transparent 74%
+  );
+  opacity: 0.2;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.ladderGlyph {
+  display: flex;
+  width: 116px;
+  height: 56px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  opacity: 0.75;
+}
+
+.ladderGlyph span {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--purple), var(--accent));
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--accent) 13%, transparent);
+}
+
+.ladderGlyph span:nth-child(1) {
+  width: 44%;
+  margin-left: 56%;
+}
+
+.ladderGlyph span:nth-child(2) {
+  width: 72%;
+  margin-left: 28%;
+}
+
+.ladderGlyph span:nth-child(3) {
+  width: 100%;
+}
+
+.title {
+  max-width: 1050px;
+  margin: 0;
+  color: var(--foreground);
+  font-size: clamp(52px, 6.4vw, 84px);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--purple), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

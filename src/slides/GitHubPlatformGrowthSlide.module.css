@@ -1,0 +1,259 @@
+.slide {
+  background: var(--background);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.orb1 {
+  width: 460px;
+  height: 460px;
+  top: -150px;
+  right: -70px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--accent) 72%, white),
+    color-mix(in srgb, var(--cyan) 18%, transparent) 55%,
+    transparent 74%
+  );
+  opacity: 0.26;
+}
+
+.orb2 {
+  width: 340px;
+  height: 340px;
+  bottom: -90px;
+  left: -55px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--purple) 62%, white),
+    color-mix(in srgb, var(--purple-deep) 14%, transparent) 60%,
+    transparent 76%
+  );
+  opacity: 0.2;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+  min-height: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 1040px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--foreground);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 820;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.subtitle {
+  max-width: 880px;
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.metricItem {
+  min-width: 0;
+}
+
+.metricChart {
+  --metric-color: var(--green);
+  position: relative;
+  min-width: 0;
+  padding: 18px 16px 16px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--metric-color) 25%, var(--border));
+  border-radius: 17px;
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  color: var(--foreground);
+  box-shadow: var(--shadow-elevated);
+}
+
+.metricChart::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: var(--metric-color);
+  opacity: 0.72;
+}
+
+.purple {
+  --metric-color: var(--purple);
+}
+
+.pink {
+  --metric-color: var(--pink);
+}
+
+.ink {
+  --metric-color: var(--foreground);
+}
+
+.metricTop {
+  display: flex;
+  min-height: 52px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.metricLabel {
+  max-width: 145px;
+  margin: 0;
+  color: var(--foreground);
+  font-size: 15px;
+  font-weight: 780;
+  line-height: 1.18;
+}
+
+.growth {
+  padding: 3px 7px;
+  flex: 0 0 auto;
+  border: 1px solid color-mix(in srgb, var(--metric-color) 30%, var(--border));
+  border-radius: 999px;
+  color: var(--metric-color);
+  background: color-mix(in srgb, var(--metric-color) 7%, var(--card));
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.bars {
+  display: grid;
+  height: 258px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: 9px;
+  padding-top: 8px;
+}
+
+.barColumn {
+  display: grid;
+  min-width: 0;
+  height: 100%;
+  grid-template-rows: 24px minmax(0, 1fr) 22px;
+  align-items: end;
+  gap: 5px;
+}
+
+.barValue {
+  align-self: end;
+  color: var(--foreground);
+  font-size: 11px;
+  font-weight: 780;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.latest .barValue {
+  color: var(--metric-color);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.barTrack {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  align-items: flex-end;
+  border-radius: 8px 8px 3px 3px;
+  background:
+    repeating-linear-gradient(
+      to top,
+      transparent 0,
+      transparent calc(25% - 1px),
+      color-mix(in srgb, var(--border) 70%, transparent) 25%
+    );
+}
+
+.barFill {
+  display: block;
+  width: 100%;
+  height: var(--bar-height);
+  min-height: 8px;
+  border-radius: 8px 8px 3px 3px;
+  background: var(--metric-color);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--metric-color) 16%, transparent);
+  transition: height 320ms ease;
+}
+
+.base .barFill {
+  opacity: 0.34;
+}
+
+.mid .barFill {
+  opacity: 0.62;
+}
+
+.latest .barFill {
+  opacity: 1;
+}
+
+.barYear {
+  color: var(--muted-foreground);
+  font-size: 9px;
+  font-weight: 720;
+  text-align: center;
+}
+
+.source {
+  margin: -7px 0 0;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1000px) {
+  .metrics {
+    gap: 12px;
+  }
+
+  .metricChart {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .metricTop {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .bars {
+    gap: 6px;
+  }
+}

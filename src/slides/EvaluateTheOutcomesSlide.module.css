@@ -1,0 +1,292 @@
+.slide {
+  background: var(--background);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.orb1 {
+  width: 400px;
+  height: 400px;
+  top: -110px;
+  right: -50px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--accent) 72%, white),
+    color-mix(in srgb, var(--cyan) 16%, transparent) 52%,
+    transparent 72%
+  );
+  opacity: 0.18;
+}
+
+.orb2 {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  left: 40px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--purple) 58%, white),
+    color-mix(in srgb, var(--purple-deep) 12%, transparent) 60%,
+    transparent 76%
+  );
+  opacity: 0.12;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+}
+
+/* ── Header ─────────────────────────────── */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 820;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.tracker {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tracker li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px 5px 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.tracker b {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--muted-foreground) 14%, transparent);
+  font-size: 9px;
+}
+
+.tracker .trackerActive {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  background: color-mix(in srgb, var(--accent) 8%, var(--card));
+  color: var(--foreground);
+  opacity: 1;
+}
+
+.trackerActive b {
+  background: var(--accent);
+  color: white;
+}
+
+.title {
+  margin: 0;
+  color: var(--foreground);
+  font-size: clamp(40px, 4.6vw, 60px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.subtitle {
+  max-width: 760px;
+  margin: 4px 0 0;
+  color: var(--muted-foreground);
+  font-size: 17px;
+  line-height: 1.45;
+}
+/* ── Flow ───────────────────────────────── */
+.cardLabel {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 820;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.flowWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.flow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) auto minmax(0, 1.1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: 14px;
+}
+
+.arrow {
+  align-self: center;
+  color: var(--muted-foreground);
+  font-size: 22px;
+}
+
+.stage {
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--card);
+  box-shadow: var(--shadow-elevated);
+}
+
+.stageInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.stageGlyph {
+  color: var(--purple);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.stageTitle {
+  color: var(--foreground);
+  font-size: 16px;
+  font-weight: 820;
+}
+
+.stageDesc {
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+
+.stageGate {
+  border: 1.5px solid color-mix(in srgb, var(--purple) 38%, var(--border));
+  background: color-mix(in srgb, var(--purple) 4%, var(--card));
+}
+
+.mechanisms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.mechanism {
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 760;
+  line-height: 1.25;
+}
+
+.stageOutput {
+  border: 1.5px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--accent) 5%, var(--card));
+}
+
+.qualities {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quality {
+  position: relative;
+  padding-left: 22px;
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 720;
+  line-height: 1.35;
+}
+
+.quality::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 900;
+}
+
+/* ── Feedback loop ──────────────────────── */
+.feedback {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border: 1.5px dashed color-mix(in srgb, var(--accent) 50%, var(--border));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
+}
+
+.feedbackIcon {
+  color: var(--accent);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.feedbackText {
+  flex: 1;
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 720;
+}
+
+.feedbackTargets {
+  display: flex;
+  gap: 8px;
+}
+
+.feedbackTargets span {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ── Takeaway ───────────────────────────── */
+.takeaway {
+  margin: 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--accent);
+  color: var(--foreground);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}

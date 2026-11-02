@@ -1,0 +1,255 @@
+.slide {
+  background: var(--background);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.orb1 {
+  width: 390px;
+  height: 390px;
+  top: -105px;
+  right: -55px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--accent) 56%, var(--card)),
+    color-mix(in srgb, var(--cyan) 13%, transparent) 52%,
+    transparent 72%
+  );
+  opacity: 0.22;
+}
+
+.orb2 {
+  width: 320px;
+  height: 320px;
+  bottom: -90px;
+  left: 30px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--purple) 46%, var(--card)),
+    color-mix(in srgb, var(--purple-deep) 10%, transparent) 60%,
+    transparent 75%
+  );
+  opacity: 0.18;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 820;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--foreground);
+  font-size: clamp(38px, 4.3vw, 58px);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.spectrum {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 132px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 18px;
+}
+
+.spectrumCard {
+  position: relative;
+  min-width: 0;
+  padding: 20px 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  box-shadow: var(--shadow-elevated);
+}
+
+.spectrumCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  opacity: 0.7;
+}
+
+.vibesCard::before {
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+}
+
+.productionCard::before {
+  background: linear-gradient(90deg, var(--cyan), var(--accent));
+}
+
+.cardHeading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+}
+
+.cardEmoji {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--secondary);
+  font-size: 18px;
+}
+
+.spectrumLabel {
+  margin: 0;
+  color: var(--foreground);
+  font-size: 17px;
+  font-weight: 790;
+  line-height: 1.15;
+}
+
+.traitList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.traitItem {
+  min-width: 0;
+}
+
+.trait {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.traitArrow {
+  margin-top: 1px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.traitText {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.38;
+}
+
+.gapConnector {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 7px;
+}
+
+.gapLine {
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--accent));
+}
+
+.gapLabel {
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.gapArrow {
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.bridge {
+  display: flex;
+  padding: 14px 18px;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid color-mix(in srgb, var(--accent) 27%, var(--border));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--accent) 7%, var(--card));
+}
+
+.bridgeIcon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--accent) 12%, var(--card));
+  font-size: 19px;
+}
+
+.bridgeCopy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bridgeTitle {
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.bridgeText {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.42;
+}
+
+@media (max-width: 1000px) {
+  .spectrum {
+    grid-template-columns: minmax(0, 1fr) 96px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .spectrumCard {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+}

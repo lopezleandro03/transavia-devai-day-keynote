@@ -1,0 +1,1 @@
+https://www.microsoft.com/en-us/worklab/ai-at-work-one-function-wrote-the-ai-playbook-the-rest-will-follow

@@ -1,0 +1,291 @@
+.slide {
+  background: var(--background);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.orb1 {
+  width: 400px;
+  height: 400px;
+  top: -110px;
+  right: -50px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--accent) 72%, white),
+    color-mix(in srgb, var(--cyan) 16%, transparent) 52%,
+    transparent 72%
+  );
+  opacity: 0.18;
+}
+
+.orb2 {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  left: 40px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--purple) 58%, white),
+    color-mix(in srgb, var(--purple-deep) 12%, transparent) 60%,
+    transparent 76%
+  );
+  opacity: 0.12;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+}
+
+/* ── Header ─────────────────────────────── */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 820;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.tracker {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tracker li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px 5px 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.tracker b {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--muted-foreground) 14%, transparent);
+  font-size: 9px;
+}
+
+.tracker .trackerActive {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  background: color-mix(in srgb, var(--accent) 8%, var(--card));
+  color: var(--foreground);
+  opacity: 1;
+}
+
+.trackerActive b {
+  background: var(--accent);
+  color: white;
+}
+
+.title {
+  margin: 0;
+  color: var(--foreground);
+  font-size: clamp(40px, 4.6vw, 60px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.subtitle {
+  max-width: 760px;
+  margin: 4px 0 0;
+  color: var(--muted-foreground);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+/* ── Main ───────────────────────────────── */
+.main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.cardLabel {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 820;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.specCard {
+  padding: 20px 22px;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 40%, var(--border));
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--accent) 4%, var(--card));
+  box-shadow: var(--shadow-elevated);
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.element {
+  min-width: 0;
+}
+
+.element + .element {
+  border-top: 1px solid var(--border);
+}
+
+.elementRow {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 14px;
+  padding: 9px 0;
+}
+
+.elementName {
+  position: relative;
+  padding-left: 16px;
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.elementName::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateY(-50%);
+}
+
+.elementDesc {
+  color: var(--muted-foreground);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+/* ── Contrast ───────────────────────────── */
+.contrast {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.requirement {
+  padding: 16px 20px;
+  border: 1px dashed color-mix(in srgb, var(--muted-foreground) 45%, transparent);
+  border-radius: 14px;
+  background: var(--card);
+}
+
+.requirement .cardLabel {
+  margin-bottom: 6px;
+}
+
+.quote {
+  margin: 0;
+  color: var(--foreground);
+  font-size: 20px;
+  font-weight: 760;
+  letter-spacing: -0.02em;
+}
+
+.paths {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.path {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: var(--shadow-elevated);
+}
+
+.pathAgent {
+  border-color: color-mix(in srgb, var(--orange) 40%, var(--border));
+}
+
+.who {
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 820;
+}
+
+.how {
+  flex: 1;
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.result {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.resultOk {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: color-mix(in srgb, var(--accent) 70%, var(--foreground));
+}
+
+.resultWarn {
+  background: color-mix(in srgb, var(--orange) 14%, transparent);
+  color: color-mix(in srgb, var(--orange) 75%, var(--foreground));
+}
+
+/* ── Takeaway ───────────────────────────── */
+.takeaway {
+  margin: 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--accent);
+  color: var(--foreground);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
