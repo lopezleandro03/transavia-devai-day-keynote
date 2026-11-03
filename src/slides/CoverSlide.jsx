@@ -5,6 +5,9 @@
  */
 import { BottomBar, Editable, Slide } from '@deckio/deck-engine'
 import styles from './CoverSlide.module.css'
+import microsoftLogo from '../data/deck-library/c9b449461abf29f3-microsoft-mark.svg'
+import githubLogo from '../data/deck-library/a7d617691975aa96-github-mark.svg'
+import transaviaLogo from '../data/logos/transavia.png'
 
 export default function CoverSlide() {
   return (
@@ -26,8 +29,9 @@ export default function CoverSlide() {
 
           <div className={styles.meta}>
             <div className={styles.metaItem}>
-              <span className={styles.metaLabel}>Project</span>
-              <span className={styles.metaValue}>Transavia DevAI Day Keynote</span>
+              <span className={styles.metaLabel}>Speaker</span>
+              <Editable as="span" id="cover.speaker.name" className={styles.metaValue}>Leandro Lopez</Editable>
+              <Editable as="span" id="cover.speaker.role" className={styles.metaRole}>Solution Engineering Lead, Microsoft Netherlands</Editable>
             </div>
             <div className={styles.metaDivider} />
             <div className={styles.metaItem}>
@@ -35,6 +39,20 @@ export default function CoverSlide() {
               <span className={styles.metaValue}>2026</span>
             </div>
           </div>
+        </div>
+
+        <div className={styles.logos}>
+          <span className={styles.logoItem}>
+            <img src={microsoftLogo} alt="Microsoft" className={styles.logoMark} />
+            <span className={styles.logoText}>Microsoft</span>
+          </span>
+          <span className={styles.logoDivider} />
+          <span className={styles.logoItem}>
+            <img src={githubLogo} alt="GitHub" className={styles.logoMark} />
+            <span className={styles.logoText}>GitHub</span>
+          </span>
+          <span className={styles.logoDivider} />
+          <img src={transaviaLogo} alt="Transavia" className={styles.transavia} />
         </div>
 
       </div>
