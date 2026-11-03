@@ -27,7 +27,7 @@ export default function AgenticEngineerSlide({ index }) {
 
           <div className={styles.connector} aria-hidden="true">
             <span />
-            <span className={styles.arrow}>→</span>
+            <span className={styles.arrow} />
           </div>
 
           <div className={styles.responsibilities}>

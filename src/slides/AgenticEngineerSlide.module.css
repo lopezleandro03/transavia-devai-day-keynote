@@ -101,18 +101,24 @@
 .connector {
   display: flex;
   align-items: center;
+  padding: 0 12px;
 }
 
 .connector span:first-child {
-  height: 2px;
+  height: 3px;
+  border-radius: 999px 0 0 999px;
   flex: 1;
   background: linear-gradient(90deg, var(--border), var(--accent));
 }
 
 .arrow {
-  color: var(--accent);
-  font-size: 30px;
-  font-weight: 900;
+  width: 0;
+  height: 0;
+  flex: none;
+  margin-left: -1px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid var(--accent);
 }
 
 .responsibilities {
