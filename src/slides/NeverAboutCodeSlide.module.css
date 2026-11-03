@@ -1,0 +1,130 @@
+.slide {
+  background: var(--background);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.orb1 {
+  width: 560px;
+  height: 560px;
+  top: -180px;
+  right: -120px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--accent) 72%, white),
+    color-mix(in srgb, var(--cyan) 16%, transparent) 52%,
+    transparent 72%
+  );
+  opacity: 0.22;
+}
+
+.orb2 {
+  width: 380px;
+  height: 380px;
+  bottom: -120px;
+  left: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--purple) 58%, white),
+    color-mix(in srgb, var(--purple-deep) 12%, transparent) 60%,
+    transparent 76%
+  );
+  opacity: 0.14;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 820;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 1100px;
+  margin: 0;
+  color: var(--foreground);
+  font-size: clamp(44px, 5.6vw, 78px);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.muted {
+  color: var(--muted-foreground);
+}
+
+.struck {
+  position: relative;
+  color: var(--muted-foreground);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--pink) 80%, transparent);
+  text-decoration-thickness: 0.08em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.moment {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  max-width: 900px;
+  margin-top: 8px;
+  padding: 22px 28px;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--accent) 7%, var(--card));
+  box-shadow: var(--shadow-elevated);
+}
+
+.check {
+  display: grid;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+  box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.momentText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dopamine {
+  margin: 0;
+  color: var(--foreground);
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 760;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.coda {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 500;
+}

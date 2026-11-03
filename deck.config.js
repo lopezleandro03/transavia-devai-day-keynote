@@ -18,6 +18,7 @@ import AzureSreAgentSlide from './src/slides/AzureSreAgentSlide.jsx'
 import ZoomItOutDividerSlide from './src/slides/ZoomItOutDividerSlide.jsx'
 import AgenticDeveloperDividerSlide from './src/slides/AgenticDeveloperDividerSlide.jsx'
 import ClosingCallSlide from './src/slides/ClosingCallSlide.jsx'
+import NeverAboutCodeSlide from './src/slides/NeverAboutCodeSlide.jsx'
 
 export default {
   id: 'transavia-devai-day-keynote',
@@ -55,6 +56,7 @@ export default {
     ZoomItOutDividerSlide,
     EvaluateOutcomesSlide,
     ClosingCallSlide,
+    NeverAboutCodeSlide,
     ThankYouSlide,
   ],
   superdeck: true,
