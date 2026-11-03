@@ -28,10 +28,7 @@ export default function NeverAboutCodeSlide({ index }) {
         <div className={styles.moment}>
           <span className={styles.check} aria-hidden="true">✓</span>
           <div className={styles.momentText}>
-            <Editable as="p" id="neverAboutCode.dopamine" className={styles.dopamine}>
-              The dopamine never came from typing. It came from the moment the problem was solved.
-            </Editable>
-            <Editable as="p" id="neverAboutCode.coda" className={styles.coda}>
+            <Editable as="p" id="neverAboutCode.coda" className={styles.dopamine}>
               That hasn't changed. Only the way we get there has.
             </Editable>
           </div>
