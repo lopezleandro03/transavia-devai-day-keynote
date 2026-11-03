@@ -21,7 +21,7 @@ export default function CoverSlide() {
             <Editable as="span" id="cover.titleBefore">From Code to</Editable> <Editable as="span" id="cover.titleHighlight" className={styles.highlight}>Outcomes</Editable>
           </h1>
           <Editable as="p" id="cover.subtitle" multiline className={styles.subtitle}>
-            Transavia DevAI Day Keynote
+            How agentic engineering is reshaping the way we build, ship, and run software
           </Editable>
 
           <div className={styles.meta}>
