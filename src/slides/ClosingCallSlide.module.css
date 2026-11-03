@@ -112,3 +112,49 @@
   font-size: 36px;
   font-weight: 800;
 }
+
+/* Typing effect */
+.statementWrap {
+  position: relative;
+  max-width: 1000px;
+}
+
+.ghost {
+  visibility: hidden;
+}
+
+.typed {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.caret {
+  display: inline-block;
+  width: 0.08em;
+  height: 0.9em;
+  margin-left: 0.06em;
+  vertical-align: -0.08em;
+  background: var(--accent);
+  animation: caretBlink 0.9s steps(1) infinite;
+}
+
+@keyframes caretBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* Boxes disclose after typing */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.revealed .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.revealed .reveal:nth-child(2) { transition-delay: 0.25s; }
+.revealed .reveal:nth-child(3) { transition-delay: 0.5s; }
