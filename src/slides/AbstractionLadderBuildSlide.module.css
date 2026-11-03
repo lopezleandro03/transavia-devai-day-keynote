@@ -196,7 +196,7 @@
   display: flex;
   min-height: 0;
   justify-content: center;
-  gap: 18px;
+  gap: 6px;
 }
 
 .arrow {
@@ -209,23 +209,32 @@
   gap: 8px;
 }
 
-.arrowHead {
-  color: var(--accent);
-  font-size: 40px;
-  font-weight: 850;
-  line-height: 0.9;
-}
-
 .arrowLine {
+  position: relative;
   width: 4px;
   min-height: 76px;
   flex: 1;
-  border-radius: 999px;
-  background: linear-gradient(to bottom, var(--accent), color-mix(in srgb, var(--accent) 24%, var(--border)));
-  box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 18%, transparent);
+  margin-top: 14px;
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(to bottom, var(--accent), color-mix(in srgb, var(--accent) 18%, transparent));
+}
+
+.arrowLine::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 16px solid var(--accent);
 }
 
 .arrowLabel {
+  min-height: 18px;
+  white-space: nowrap;
   color: var(--accent);
   font-size: 12px;
   font-weight: 850;
@@ -233,10 +242,10 @@
   line-height: 1.45;
   text-align: center;
   text-transform: uppercase;
-  white-space: pre-line;
 }
 
 .arrowSub {
+  min-height: 30px;
   color: var(--muted-foreground);
   font-size: 11px;
   font-weight: 500;
