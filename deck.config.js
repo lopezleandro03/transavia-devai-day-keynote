@@ -16,6 +16,7 @@ import EvaluateTheOutcomesSlide from './src/slides/EvaluateTheOutcomesSlide.jsx'
 import SddFrameworksSlide from './src/slides/SddFrameworksSlide.jsx'
 import AzureSreAgentSlide from './src/slides/AzureSreAgentSlide.jsx'
 import ZoomItOutDividerSlide from './src/slides/ZoomItOutDividerSlide.jsx'
+import AgenticDeveloperDividerSlide from './src/slides/AgenticDeveloperDividerSlide.jsx'
 import ClosingCallSlide from './src/slides/ClosingCallSlide.jsx'
 
 export default {
@@ -42,6 +43,7 @@ export default {
     AbstractionLadderBuildSlide,
     GitHubPlatformGrowthSlide,
     VibesDontScaleSlide,
+    AgenticDeveloperDividerSlide,
     AgenticEngineerSlide,
     SpecifyTheWorkSlide,
     SddFrameworksSlide,
