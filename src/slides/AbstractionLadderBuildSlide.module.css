@@ -37,7 +37,7 @@
   z-index: 10;
   display: grid;
   min-height: 0;
-  grid-template-columns: minmax(0, 1fr) 140px;
+  grid-template-columns: minmax(0, 1fr) 210px;
   align-items: stretch;
   gap: 34px;
   padding-top: 40px;
@@ -192,7 +192,15 @@
   letter-spacing: 0.07em;
 }
 
+.arrows {
+  display: flex;
+  min-height: 0;
+  justify-content: center;
+  gap: 18px;
+}
+
 .arrow {
+  flex: 1;
   display: flex;
   min-height: 0;
   padding: 10px 0 4px;
@@ -228,9 +236,22 @@
   white-space: pre-line;
 }
 
+.arrowSub {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.arrowAlt {
+  --accent: var(--purple);
+}
+
 @media (max-width: 1000px) {
   .body {
-    grid-template-columns: minmax(0, 1fr) 110px;
+    grid-template-columns: minmax(0, 1fr) 180px;
     gap: 22px;
   }
 

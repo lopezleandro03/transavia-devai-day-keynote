@@ -105,12 +105,19 @@ export default function AbstractionLadderBuildSlide({ index }) {
           }}
         </EditableList>
 
-        <aside className={styles.arrow}>
-          <span className={styles.arrowHead} aria-hidden="true">↑</span>
-          <span className={styles.arrowLine} aria-hidden="true" />
-          <Editable as="span" id="abstractionLadder.arrowLabel" multiline className={styles.arrowLabel}>
-            {`Abstraction,\nProductivity &\nInclusiveness`}
-          </Editable>
+        <aside className={styles.arrows}>
+          <div className={styles.arrow}>
+            <span className={styles.arrowHead} aria-hidden="true">↑</span>
+            <span className={styles.arrowLine} aria-hidden="true" />
+            <Editable as="span" id="abstractionLadder.arrows.more.title" className={styles.arrowLabel}>Do more</Editable>
+            <Editable as="span" id="abstractionLadder.arrows.more.sub" multiline className={styles.arrowSub}>{`Abstraction &\nproductivity`}</Editable>
+          </div>
+          <div className={`${styles.arrow} ${styles.arrowAlt}`}>
+            <span className={styles.arrowHead} aria-hidden="true">↑</span>
+            <span className={styles.arrowLine} aria-hidden="true" />
+            <Editable as="span" id="abstractionLadder.arrows.people.title" multiline className={styles.arrowLabel}>{`More\nbuilders`}</Editable>
+            <Editable as="span" id="abstractionLadder.arrows.people.sub" className={styles.arrowSub}>Inclusiveness</Editable>
+          </div>
         </aside>
       </div>
 
