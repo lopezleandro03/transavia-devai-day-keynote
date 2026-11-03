@@ -211,25 +211,30 @@
 
 .arrowLine {
   position: relative;
-  width: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 44px;
   min-height: 76px;
   flex: 1;
-  margin-top: 14px;
-  border-radius: 0 0 999px 999px;
-  background: linear-gradient(to bottom, var(--accent), color-mix(in srgb, var(--accent) 18%, transparent));
 }
 
-.arrowLine::before {
-  content: "";
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
+.arrowTip {
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 16px solid var(--accent);
+  flex: none;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 26px solid var(--accent);
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--accent) 35%, transparent));
+}
+
+.arrowBody {
+  display: block;
+  width: 24px;
+  flex: 1;
+  min-height: 0;
+  margin-top: -1px;
 }
 
 .arrowLabel {
